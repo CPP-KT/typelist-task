@@ -1,7 +1,11 @@
-# Template for tasks of C++ course
+# Typelist
 
-> NOTE: Change project name in CMakeLists.txt for another task
+В этом задании нужно реализовать несколько мета-функций/мета-переменных для работы с тайплистами:
 
-> NOTE: Change ci-extra/set-upstream.sh for another task
+1. `contains<Type, List>` &mdash; возвращает `true`, если `List` содержит `Type`, иначе `false`;
+2. `flip<List>` &mdash; принимает список пар типов (пара &mdash; тайплист размера 2), возвращает список, в котором у каждой пары элементы переставлены местами;
+3. `index_of_unique<Type, List>` &mdash; возвращает индекс единственного вхождения `Type` в `List`;
+4. `flatten<List>` &mdash; рекурсивно разворачивает все вложенные тайплисты в один одномерный;
+5. `merge_sort<List, Compare>` &mdash; возвращает копию `List`, но с элементами, отсортированными компаратором `Compare` (он принимает два типа, и возвращает `true`, если первый должен идти до второго).
 
-> NOTE: Rename src/solution.h according to task
+Все присутствующие в вашем репозитории мета-функции (в том числе не перечисленные выше) должны уметь работать с произвольными тайплистами, а не только с `tl::type_list`.
