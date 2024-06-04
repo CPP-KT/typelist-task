@@ -11,18 +11,22 @@ TEST_CASE("contains") {
   STATIC_REQUIRE(tl::contains<double, tl::type_list<int, double, float>>);
   STATIC_REQUIRE(tl::contains<float, tl::type_list<int, double, float>>);
   STATIC_REQUIRE(tl::contains<int, tl::type_list<int>>);
+  STATIC_REQUIRE(tl::contains<int, tl::type_list<int, int>>);
 
   STATIC_REQUIRE(!tl::contains<char, tl::type_list<int, double, float>>);
   STATIC_REQUIRE(!tl::contains<char, tl::type_list<int>>);
   STATIC_REQUIRE(!tl::contains<char, tl::type_list<>>);
+  STATIC_REQUIRE(!tl::contains<char, tl::type_list<int, int>>);
 
   STATIC_REQUIRE(tl::contains<int, std::tuple<int, double, float>>);
   STATIC_REQUIRE(tl::contains<float, std::tuple<int, double, float>>);
   STATIC_REQUIRE(tl::contains<int, std::tuple<int>>);
+  STATIC_REQUIRE(tl::contains<int, std::tuple<int, int>>);
 
   STATIC_REQUIRE(!tl::contains<char, std::tuple<int, double, float>>);
   STATIC_REQUIRE(!tl::contains<char, std::tuple<int>>);
   STATIC_REQUIRE(!tl::contains<char, std::tuple<>>);
+  STATIC_REQUIRE(!tl::contains<char, std::tuple<int, int>>);
 }
 
 TEST_CASE("flip") {
