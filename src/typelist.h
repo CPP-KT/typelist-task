@@ -1,8 +1,8 @@
 #pragma once
 
-namespace tl {
+namespace ct::tl {
 
 template <typename... Types>
-struct type_list;
+struct TypeList;
 
-} // namespace tl
+} // namespace ct::tl
